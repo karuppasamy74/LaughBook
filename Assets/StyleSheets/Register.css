@@ -1,0 +1,92 @@
+/* ===================================================
+   LIGHT THEME - LOGIN / REGISTER PAGE STYLES
+   =================================================== */
+
+/* --- 1. FULL-SCREEN BACKGROUND WRAPPER --- */
+.auth-wrapper {
+    background-color: var(--bg-color); /* Uses #F4F1F9 light background */
+}
+
+/* --- 2. AUTHENTICATION CARD --- */
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    background-color: #ffffff !important; /* Pure white card for light theme */
+    border: 1px solid var(--input-border) !important;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); /* Softer, lighter shadow */
+    color: var(--text-color) !important;
+}
+
+/* --- 3. INPUT ADDONS & FORMS --- */
+.custom-input {
+    background-color: #ffffff !important;
+    border: 1px solid var(--input-border) !important;
+    color: #1a1a1a !important;
+}
+
+.custom-input:focus {
+    border-color: var(--accent-purple) !important;
+    box-shadow: 0 0 0 0.25rem rgba(168, 85, 247, 0.15) !important;
+}
+
+.custom-input-addon {
+    background-color: #f8f6fc !important; /* Soft tinted gray-purple addon background */
+    border: 1px solid var(--input-border) !important;
+    color: #4b5563 !important;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Checkbox adjustment for light mode */
+.custom-checkbox {
+    background-color: #ffffff;
+    border-color: var(--input-border);
+    cursor: pointer;
+}
+
+.custom-checkbox:checked {
+    background-color: var(--accent-purple);
+    border-color: var(--accent-purple);
+}
+
+/* --- 4. BUTTON & ACCENT OVERRIDES --- */
+.auth-card .btn-warning {
+    background-color: var(--accent-gold);
+    color: #000000 !important;
+    border: none;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.auth-card .btn-warning:hover {
+    opacity: 0.92;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(250, 204, 21, 0.35);
+}
+
+.auth-card .btn-purple {
+    background: linear-gradient(135deg, #a855f7, #7e22ce);
+    color: #ffffff !important;
+    border: none;
+}
+
+/* --- 5. LINKS & HELPERS --- */
+.auth-link {
+    color: #7e22ce; /* Darker purple link for high contrast against light background */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.auth-link:hover {
+    color: #a855f7;
+    text-decoration: underline;
+}
+
+/* --- 6. RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 576px) {
+    .auth-card {
+        padding: 1.5rem !important;
+    }
+}

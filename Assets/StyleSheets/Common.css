@@ -1,0 +1,94 @@
+/* ===================================================
+   COMMON GLOBAL THEME & ACCENT STYLES
+   =================================================== */
+
+:root {
+    --primary-purple: #a855f7;
+    --primary-purple-dark: #7e22ce;
+    --primary-purple-light: #f3e8ff;
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: system-ui, -apple-system, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.text-purple {
+    color: var(--primary-purple-dark) !important;
+}
+
+.bg-purple {
+    background-color: var(--primary-purple) !important;
+}
+
+.bg-purple-subtle {
+    background-color: var(--primary-purple-light) !important;
+}
+
+.btn-purple {
+    background-color: var(--primary-purple);
+    color: #ffffff;
+    border: none;
+}
+
+.btn-purple:hover {
+    background-color: #9333ea;
+    color: #ffffff;
+}
+
+.btn-outline-purple {
+    color: var(--primary-purple-dark);
+    border: 1px solid var(--primary-purple);
+    background-color: transparent;
+}
+
+.btn-outline-purple:hover {
+    background-color: var(--primary-purple);
+    color: #ffffff;
+}
+
+.extra-small {
+    font-size: 0.8rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* ===================================================
+   GLOBAL DARK MODE OVERRIDES
+   =================================================== */
+html.dark-mode,
+body.dark-mode {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .navbar,
+body.dark-mode footer,
+body.dark-mode .modal-content {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .text-dark {
+    color: #ffffff !important;
+}
+
+body.dark-mode .text-secondary,
+body.dark-mode .text-muted {
+    color: #94a3b8 !important;
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #ffffff !important;
+}

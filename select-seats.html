@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughBook - Select Your Seats</title>
+    <link rel="icon" href="./Assets/Images/gemini-svg (1).svg" type="image/svg+xml">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./Assets/StyleSheets/Common.css">
+    <link rel="stylesheet" href="./Assets/StyleSheets/SelectSeats.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+                    <img src="./Assets/Images/logo.png" alt="Logo" style="height: 40px;">
+                    <span class="fw-bold fs-4 text-dark">LaughBook</span>
+                </a>
+                <div class="ms-auto d-flex align-items-center gap-3">
+                    <a href="./booknow.html" class="btn btn-outline-secondary btn-sm">← Back to Tier Selection</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container-fluid py-4 px-md-5">
+        <div class="row g-4">
+            
+            <!-- LEFT COLUMN: SEATING CHART (12 TABLES x 5 SEATS) -->
+            <div class="col-12 col-lg-8">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                    
+                    <!-- Stage Banner -->
+                    <div class="stage-banner text-center py-2 mb-4 rounded-3 text-uppercase fw-bold text-secondary">
+                        🎭 Stage Area 🎭
+                    </div>
+
+                    <!-- Legend Indicator -->
+                    <div class="d-flex justify-content-center align-items-center gap-4 mb-4 flex-wrap small fw-semibold">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="legend-box available-seat"></span> Available
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="legend-box selected-seat"></span> Selected
+                        </div>
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="legend-box booked-seat"></span> Already Booked
+                        </div>
+                    </div>
+
+                    <!-- 12 Tables Grid Container -->
+                    <div class="row row-cols-2 row-cols-md-3 row-cols-xl-4 g-4" id="tablesContainer">
+                        <!-- Dynamic 12 Tables render here -->
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: CHECKOUT SUMMARY SIDEBAR -->
+            <div class="col-12 col-lg-4">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white sticky-top" style="top: 20px;">
+                    <h3 class="h5 fw-bold text-dark mb-3">Booking Summary</h3>
+                    
+                    <!-- Selected Show Info -->
+                    <div class="p-3 bg-light rounded-3 mb-3">
+                        <div class="fw-bold text-dark" id="summaryShowTitle">Loading Show...</div>
+                        <div class="small text-muted" id="summaryShowDetails">Date & Venue</div>
+                        <div class="badge bg-purple-subtle text-purple mt-2" id="summaryTierBadge">Standard Tier</div>
+                    </div>
+
+                    <!-- Seat Details -->
+                    <div class="mb-3">
+                        <div class="d-flex justify-content-between text-muted small mb-1">
+                            <span>Selected Seats:</span>
+                            <span class="fw-bold text-dark" id="selectedSeatsCount">0 Seats</span>
+                        </div>
+                        <div class="p-2 border rounded-3 bg-white extra-small text-dark min-h-50" id="selectedSeatsList">
+                            No seats selected yet.
+                        </div>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <!-- Price Calculation -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <span class="fw-bold text-dark fs-5">Total Price:</span>
+                        <span class="fw-bold fs-3 text-purple" id="totalPrice">$0.00</span>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="d-grid gap-2">
+                        <button type="button" id="checkoutBtn" class="btn btn-purple btn-lg fw-bold" disabled>
+                            Proceed to Checkout →
+                        </button>
+                        <button type="button" id="resetBtn" class="btn btn-outline-danger btn-sm fw-semibold">
+                            Reset Seat Selection
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./Assets/JavaScripts/Common.js"></script>
+    <script src="./Assets/JavaScripts/SelectSeats.js"></script>
+</body>
+
+</html>

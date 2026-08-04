@@ -1,0 +1,23 @@
+.tier-card {
+    background-color: #ffffff;
+    border-color: #e5e7eb !important;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.tier-card:hover {
+    transform: translateY(-5px);
+    border-color: #a855f7 !important;
+    box-shadow: 0 12px 24px rgba(168, 85, 247, 0.15);
+}
+
+.tier-card.selected {
+    border-color: #a855f7 !important;
+    background-color: #faf5ff;
+    box-shadow: 0 0 0 2px #a855f7, 0 12px 24px rgba(168, 85, 247, 0.2);
+}
+
+.tier-card.selected .select-tier-btn {
+    background-color: #a855f7 !important;
+    color: #ffffff !important;
+}

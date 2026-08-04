@@ -1,0 +1,31 @@
+/* ===================================================
+   CONTACT PAGE STYLES
+   =================================================== */
+
+.custom-input {
+    background-color: #ffffff;
+    border: 1px solid #d8d2e1;
+    color: #1a1a1a;
+    border-radius: 8px;
+    padding: 0.6rem 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.15);
+}
+
+/* ===================================================
+   DARK MODE OVERRIDES
+   =================================================== */
+body.dark-mode .custom-input {
+    background-color: #0f172a !important;
+    border-color: #334155 !important;
+    color: #ffffff !important;
+}
+
+body.dark-mode .custom-input:focus {
+    background-color: #1e293b !important;
+    border-color: #a855f7 !important;
+}

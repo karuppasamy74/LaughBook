@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughBook - Discover Shows</title>
+    <link rel="icon" href="./Assets/Images/gemini-svg (1).svg" type="image/svg+xml">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./Assets/StyleSheets/Common.css">
+    <link rel="stylesheet" href="./Assets/StyleSheets/Index.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg custom-navbar border-bottom border-secondary border-opacity-25 bg-white shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand d-flex align-items-center gap-2 me-4" href="./index.html">
+                    <img src="./Assets/Images/logo.png" alt="Logo" class="brand-logo" style="height: 40px;">
+                    <span class="brand-title fw-bold fs-4 text-dark">LaughBook</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <div class="search-wrapper my-2 my-lg-0 me-auto">
+                        <form id="searchForm" class="w-100">
+                            <input type="search" class="form-control rounded-pill custom-search-input"
+                                placeholder="Search shows, venues, comics..." aria-label="Search">
+                        </form>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                        <ul class="navbar-nav d-flex flex-row gap-4 mb-0">
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold text-purple active" href="./index.html">Discover</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="./booking.html">My Bookings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="./contact.html">Contact</a>
+                            </li>
+                        </ul>
+
+                        <a href="./profile.html" class="text-decoration-none">
+                            <div class="profile-avatar rounded-circle d-flex align-items-center justify-content-center bg-purple text-white fw-bold overflow-hidden" 
+                                id="profileAvatarContainer" style="width: 40px; height: 40px;">
+                                <span id="profileAvatarText">K</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container my-4">
+
+        <!-- Category Filter Pills -->
+        <section class="d-flex gap-2 overflow-x-auto py-2 mb-4">
+            <button class="btn filter-pill active" data-filter="all">All</button>
+            <button class="btn filter-pill" data-filter="comedy">Comedy</button>
+            <button class="btn filter-pill" data-filter="music">Music</button>
+            <button class="btn filter-pill" data-filter="theater">Theater</button>
+            <button class="btn filter-pill" data-filter="sports">Sports</button>
+        </section>
+
+        <!-- Count & Sort Row -->
+        <section class="showfound mb-4">
+            <div class="d-flex align-items-center justify-content-between">
+                <div class="result-count">
+                    <span id="total-count">0</span> Show Found
+                </div>
+                <div class="sort-container">
+                    <select class="form-select custom-sort-select" aria-label="Sort options">
+                        <option value="featured" selected>Sort: Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="date-soonest">Date: Soonest</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Show Cards Section -->
+        <section class="showcards">
+            <div class="container-fluid px-0">
+                <div class="mb-4">
+                    <h2 id="showcontainerTitle" class="h4 fw-bold text-dark">All Upcoming Shows</h2>
+                </div>
+                <div class="row g-4" id="showContainer">
+                    <!-- Cards will be populated by Index.js -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-white border-top">
+        <div class="container text-center">
+            <span class="text-muted small">&copy; 2026 LaughBook. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./Assets/JavaScripts/Common.js"></script>
+    <script src="./Assets/JavaScripts/Index.js"></script>
+</body>
+
+</html>

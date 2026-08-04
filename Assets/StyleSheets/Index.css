@@ -1,0 +1,67 @@
+/* FILTER PILLS */
+.filter-pill {
+    border-radius: 50rem;
+    border: 1px solid #d8d2e1 !important;
+    padding: 0.45rem 1.25rem;
+    white-space: nowrap;
+    background-color: #ffffff !important;
+    color: #4b5563 !important;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.filter-pill:hover {
+    background-color: #f3e8ff !important;
+    color: #7e22ce !important;
+    border-color: #a855f7 !important;
+}
+
+.filter-pill.active {
+    background-color: #a855f7 !important;
+    color: #ffffff !important;
+    border-color: #a855f7 !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.35);
+}
+
+/* RESULT COUNT */
+.result-count {
+    color: #4b5563;
+    font-weight: 600;
+}
+
+.result-count #total-count {
+    color: #a855f7;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* EVENT BADGES */
+.category-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.35rem;
+    backdrop-filter: blur(4px);
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ffffff;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}

@@ -1,0 +1,29 @@
+.booking-filter-btn {
+    background-color: #ffffff;
+    color: #4b5563;
+    border: 1px solid #d8d2e1;
+    border-radius: 50rem;
+    padding: 0.45rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.booking-filter-btn.active {
+    background-color: #a855f7 !important;
+    color: #ffffff !important;
+    border-color: #a855f7 !important;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.booking-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    transition: transform 0.2s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}

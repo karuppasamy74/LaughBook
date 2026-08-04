@@ -1,0 +1,83 @@
+/* ===================================================
+   PROFILE PAGE STYLES
+   =================================================== */
+
+.text-purple {
+    color: #7e22ce !important;
+}
+
+.bg-purple {
+    background-color: #a855f7 !important;
+}
+
+.btn-purple {
+    background-color: #a855f7;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-purple:hover {
+    background-color: #9333ea;
+    color: #ffffff;
+}
+
+.text-purple-link {
+    color: #7e22ce;
+}
+
+.text-purple-link:hover {
+    text-decoration: underline !important;
+}
+
+.custom-input {
+    background-color: #ffffff;
+    border: 1px solid #d8d2e1;
+    color: #1a1a1a;
+    border-radius: 8px;
+    padding: 0.55rem 0.9rem;
+}
+
+.custom-input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 0.2rem rgba(168, 85, 247, 0.15);
+}
+
+.custom-switch:checked {
+    background-color: #a855f7;
+    border-color: #a855f7;
+}
+
+.extra-small {
+    font-size: 0.8rem;
+}
+
+/* ===================================================
+   DARK MODE THEME OVERRIDES
+   =================================================== */
+body.dark-mode {
+    background-color: #0f172a !important;
+    color: #f8fafc !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .navbar,
+body.dark-mode footer {
+    background-color: #1e293b !important;
+    color: #ffffff !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .text-dark {
+    color: #ffffff !important;
+}
+
+body.dark-mode .custom-input {
+    background-color: #0f172a;
+    border-color: #334155;
+    color: #ffffff;
+}
+
+body.dark-mode .custom-input:focus {
+    background-color: #1e293b;
+    color: #ffffff;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughBook - My Bookings</title>
+    <link rel="icon" href="./Assets/Images/gemini-svg (1).svg" type="image/svg+xml">
+    
+    <!-- StyleSheet Links -->
+    <link rel="stylesheet" href="./Assets/StyleSheets/Common.css">
+    <link rel="stylesheet" href="./Assets/StyleSheets/Booking.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <!-- Header / Navbar -->
+    <header class="no-print">
+        <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand d-flex align-items-center gap-2 me-4" href="./index.html">
+                    <img src="./Assets/Images/logo.png" alt="Logo" class="brand-logo" style="height: 40px;">
+                    <span class="brand-title fw-bold fs-4 text-dark">LaughBook</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <div class="search-wrapper my-2 my-lg-0 me-auto">
+                        <form id="bookingSearchForm" class="w-100">
+                            <input type="search" id="bookingSearchInput" class="form-control rounded-pill custom-search-input"
+                                placeholder="Search booked shows, venues..." aria-label="Search">
+                        </form>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                        <ul class="navbar-nav d-flex flex-row gap-4 mb-0">
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="./index.html">Discover</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold text-purple active" href="./booking.html">My Bookings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="./contact.html">Contact</a>
+                            </li>
+                        </ul>
+
+                        <a href="./profile.html" class="text-decoration-none">
+                            <div class="profile-avatar rounded-circle d-flex align-items-center justify-content-center bg-purple text-white fw-bold overflow-hidden" 
+                                id="profileAvatarContainer" style="width: 40px; height: 40px;">
+                                <span id="profileAvatarText">K</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container py-5">
+        <header class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+            <div>
+                <h1 class="fw-bold mb-1 text-dark">My Bookings</h1>
+                <p class="text-secondary mb-0">Everything you've booked at LaughBook, in one place.</p>
+            </div>
+            <button id="exportAllBtn" class="btn btn-purple rounded-pill px-4 py-2 fw-semibold">
+                Export All Bookings (.json)
+            </button>
+        </header>
+
+        <!-- Filter Buttons -->
+        <nav class="d-flex justify-content-center gap-2 mb-4" aria-label="Booking filters">
+            <button class="btn booking-filter-btn active" data-filter="all">All</button>
+            <button class="btn booking-filter-btn" data-filter="upcoming">Upcoming</button>
+            <button class="btn booking-filter-btn" data-filter="past">Past</button>
+        </nav>
+
+        <!-- Bookings List -->
+        <section class="bookings-list" id="bookingsContainer">
+            <!-- Dynamic Booking Cards Render Here -->
+        </section>
+    </main>
+
+    <!-- Receipt Modal -->
+    <div class="modal fade" id="receiptModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-4 shadow">
+                <div class="modal-header border-0 pb-0 no-print">
+                    <h5 class="modal-title fw-bold text-dark">Ticket Receipt & Pass</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4" id="receiptModalBody">
+                    <!-- Dynamic Printable Receipt HTML Injected Here -->
+                </div>
+                <div class="modal-footer border-0 pt-0 no-print d-flex justify-content-between">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" onclick="window.print()" class="btn btn-purple fw-bold px-4">
+                        🖨️ Print Receipt
+                    </button>
+                </div>
+            </div>
+        </modal-dialog>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-white border-top no-print">
+        <div class="container text-center">
+            <span class="text-muted small">&copy; 2026 LaughBook. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./Assets/JavaScripts/Common.js"></script>
+    <script src="./Assets/JavaScripts/Booking.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughBook - Checkout & Confirmation</title>
+    <link rel="icon" href="./Assets/Images/gemini-svg (1).svg" type="image/svg+xml">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom StyleSheets -->
+    <link rel="stylesheet" href="./Assets/StyleSheets/Common.css">
+    <link rel="stylesheet" href="./Assets/StyleSheets/Checkout.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Header (Hidden when printing ticket) -->
+    <header class="no-print">
+        <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="./index.html">
+                    <img src="./Assets/Images/logo.png" alt="Logo" style="height: 40px;">
+                    <span class="fw-bold fs-4 text-dark">LaughBook</span>
+                </a>
+                <div class="ms-auto d-flex align-items-center gap-3">
+                    <a href="./select-seats.html" class="btn btn-outline-secondary btn-sm">← Change Seats</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        
+        <!-- CHECKOUT FORM SECTION -->
+        <div id="checkoutFormSection" class="row g-4 no-print">
+            
+            <div class="col-12 col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                    <h2 class="h5 fw-bold text-dark mb-4">1. Attendee Details</h2>
+                    <form id="checkoutForm">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label class="form-label small fw-semibold text-secondary">Full Name</label>
+                                <input type="text" id="custName" class="form-control" readonly required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label small fw-semibold text-secondary">Email Address</label>
+                                <input type="email" id="custEmail" class="form-control" readonly required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label small fw-semibold text-secondary">Phone Number <span class="text-danger">*</span></label>
+                                <input type="tel" id="custPhone" class="form-control" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white">
+                    <h2 class="h5 fw-bold text-dark mb-3">2. Select Payment Method</h2>
+                    
+                    <div class="d-flex flex-column gap-3">
+                        <label class="payment-option p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="UPI / GPay / PhonePe" checked>
+                            <div>
+                                <div class="fw-bold text-dark">UPI / GPay / PhonePe</div>
+                                <div class="extra-small text-muted">Instant payment using any UPI app</div>
+                            </div>
+                        </label>
+
+                        <label class="payment-option p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="Credit / Debit Card">
+                            <div>
+                                <div class="fw-bold text-dark">Credit / Debit Card</div>
+                                <div class="extra-small text-muted">Visa, Mastercard, RuPay</div>
+                            </div>
+                        </label>
+
+                        <label class="payment-option p-3 border rounded-3 d-flex align-items-center gap-3 cursor-pointer">
+                            <input type="radio" name="paymentMethod" value="Net Banking">
+                            <div>
+                                <div class="fw-bold text-dark">Net Banking</div>
+                                <div class="extra-small text-muted">All major Indian banks supported</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-5">
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white sticky-top" style="top: 20px;">
+                    <h2 class="h5 fw-bold text-dark mb-3">Order Summary</h2>
+                    
+                    <div class="p-3 bg-light rounded-3 mb-3">
+                        <h3 class="h6 fw-bold text-dark mb-1" id="checkoutShowTitle">Show Title</h3>
+                        <p class="small text-muted mb-0" id="checkoutShowVenue">Venue</p>
+                        <p class="small text-muted mb-0" id="checkoutShowTime">Date & Time</p>
+                    </div>
+
+                    <div class="d-flex justify-content-between small text-secondary mb-2">
+                        <span>Tier:</span>
+                        <strong class="text-dark" id="checkoutTier">Standard</strong>
+                    </div>
+                    <div class="d-flex justify-content-between small text-secondary mb-2">
+                        <span>Seats Selected:</span>
+                        <strong class="text-dark" id="checkoutSeats">None</strong>
+                    </div>
+
+                    <hr class="my-3">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <span class="fw-bold text-dark fs-5">Total Payable:</span>
+                        <span class="fw-bold fs-3 text-purple" id="checkoutTotal">$0.00</span>
+                    </div>
+
+                    <button type="button" id="confirmBookingBtn" class="btn btn-purple btn-lg w-100 fw-bold">
+                        Confirm & Book Now
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Policy Agreement Modal -->
+        <div class="modal fade" id="termsModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content border-0 rounded-4 shadow">
+                    <div class="modal-header border-0 pb-0">
+                        <h5 class="modal-title fw-bold text-dark">⚠️ Booking Policy Agreement</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body py-4">
+                        <div class="alert alert-warning border-0 bg-warning-subtle text-dark p-3 rounded-3 mb-0">
+                            <strong>Notice:</strong> All show ticket purchases are <strong>non-refundable</strong>. There is <strong>NO cash back or cancellation option</strong> available once confirmed.
+                        </div>
+                    </div>
+                    <div class="modal-footer border-0 pt-0">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" id="agreeAndPayBtn" class="btn btn-purple fw-bold px-4">I Agree & Proceed</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Printable Ticket Pass -->
+        <div id="ticketPassSection" class="d-none">
+            <div class="text-center no-print mb-4">
+                <div class="badge bg-success-subtle text-success fs-6 px-4 py-2 rounded-pill mb-2">🎉 Booking Confirmed!</div>
+                <h1 class="h3 fw-bold text-dark">Your Digital Event Pass</h1>
+                <p class="text-muted small">Please present this pass at the venue entrance.</p>
+                <div class="d-flex justify-content-center gap-2 mt-2">
+                    <button type="button" onclick="window.print()" class="btn btn-purple fw-bold px-4 py-2">
+                        🖨️ Print Ticket / Save PDF
+                    </button>
+                    <a href="./booking.html" class="btn btn-outline-secondary fw-bold px-4 py-2">
+                        View All My Bookings
+                    </a>
+                </div>
+            </div>
+
+            <div class="ticket-card mx-auto bg-white border rounded-4 overflow-hidden shadow-sm" style="max-width: 650px;">
+                <div class="ticket-header p-4 text-white d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="badge bg-white text-purple fw-bold mb-1">LAUGHBOOK PASS</span>
+                        <h2 class="h4 fw-bold mb-0 text-white" id="ticketTitle">Show Title</h2>
+                    </div>
+                    <div class="text-end">
+                        <span class="fs-4 fw-bold text-white" id="ticketTier">VIP</span>
+                    </div>
+                </div>
+
+                <div class="ticket-body p-4">
+                    <div class="row g-3">
+                        <div class="col-7">
+                            <div class="extra-small text-muted text-uppercase">Attendee</div>
+                            <div class="fw-bold text-dark mb-2" id="ticketAttendee">Name</div>
+
+                            <div class="extra-small text-muted text-uppercase">Venue</div>
+                            <div class="fw-semibold text-dark mb-2" id="ticketVenue">Venue</div>
+
+                            <div class="extra-small text-muted text-uppercase">Date & Time</div>
+                            <div class="fw-semibold text-dark mb-2" id="ticketDateTime">Date</div>
+
+                            <div class="extra-small text-muted text-uppercase">Allocated Seats</div>
+                            <div class="fw-bold text-purple fs-5" id="ticketSeats">T1-S1</div>
+                        </div>
+
+                        <div class="col-5 text-center d-flex flex-column align-items-center justify-content-center border-start ps-3">
+                            <div class="qr-placeholder p-2 bg-white border rounded-3 mb-2">
+                                <svg width="110" height="110" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0H40V40H0V0ZM10 10V30H30V10H10Z" fill="#1A1A1A"/>
+                                    <path d="M60 0H100V40H60V0ZM70 10V30H90V10H70Z" fill="#1A1A1A"/>
+                                    <path d="M0 60H40V100H0V60ZM10 70V90H30V70H10Z" fill="#1A1A1A"/>
+                                    <path d="M50 50H60V60H50V50ZM70 50H90V60H70V50ZM50 70H70V90H50V70ZM80 80H100V100H80V80Z" fill="#1A1A1A"/>
+                                </svg>
+                            </div>
+                            <div class="extra-small text-muted font-monospace" id="ticketRefNo">REF-892341</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ticket-footer bg-light p-3 text-center border-top extra-small text-muted">
+                    No Cash Back / Non-refundable • Entry subject to venue rules
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./Assets/JavaScripts/Common.js"></script>
+    <script src="./Assets/JavaScripts/Checkout.js"></script>
+</body>
+
+</html>

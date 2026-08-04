@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaughBook - Contact Us</title>
+    <link rel="icon" href="./Assets/Images/gemini-svg (1).svg" type="image/svg+xml">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom StyleSheets -->
+    <link rel="stylesheet" href="./Assets/StyleSheets/Common.css">
+    <link rel="stylesheet" href="./Assets/StyleSheets/Contact.css">
+</head>
+
+<body class="bg-light">
+
+    <!-- Header / Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white border-bottom shadow-sm">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand d-flex align-items-center gap-2 me-4" href="./index.html">
+                    <img src="./Assets/Images/logo.png" alt="Logo" class="brand-logo" style="height: 40px;">
+                    <span class="brand-title fw-bold fs-4 text-dark">LaughBook</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <div class="ms-auto d-flex align-items-center gap-4 mt-3 mt-lg-0">
+                        <ul class="navbar-nav d-flex flex-row gap-4 mb-0">
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="./index.html">Discover</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-secondary" href="./booking.html">My Bookings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link fw-bold text-purple active" href="./contact.html">Contact</a>
+                            </li>
+                        </ul>
+
+                        <a href="./profile.html" class="text-decoration-none">
+                            <div class="profile-avatar rounded-circle d-flex align-items-center justify-content-center bg-purple text-white fw-bold overflow-hidden" 
+                                id="profileAvatarContainer" style="width: 40px; height: 40px;">
+                                <span id="profileAvatarText">K</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container py-5">
+        
+        <!-- Header Title -->
+        <div class="text-center mb-5">
+            <span class="badge bg-purple-subtle text-purple fw-bold px-3 py-2 rounded-pill mb-2">WE'RE HERE TO HELP</span>
+            <h1 class="fw-bold text-dark display-6">Get in Touch with LaughBook</h1>
+            <p class="text-secondary col-lg-6 mx-auto">Have questions about an upcoming show, ticket bookings, or venue partnerships? Send us a message and our support team will respond shortly.</p>
+        </div>
+
+        <div class="row g-4">
+            
+            <!-- LEFT COLUMN: CONTACT FORM -->
+            <div class="col-12 col-lg-7">
+                <div class="card border-0 shadow-sm rounded-4 p-4 p-md-5 bg-white">
+                    <h2 class="h5 fw-bold text-dark mb-4">Send Us a Message</h2>
+
+                    <!-- Success Alert (Hidden by default) -->
+                    <div id="contactSuccessAlert" class="alert alert-success border-0 bg-success-subtle text-success p-3 rounded-3 d-none mb-4" role="alert">
+                        🎉 Thank you for reaching out! Your message has been sent successfully.
+                    </div>
+
+                    <form id="contactForm">
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6">
+                                <label for="contactName" class="form-label small fw-semibold text-secondary">Your Name <span class="text-danger">*</span></label>
+                                <input type="text" id="contactName" class="form-control custom-input" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="contactEmail" class="form-label small fw-semibold text-secondary">Email Address <span class="text-danger">*</span></label>
+                                <input type="email" id="contactEmail" class="form-control custom-input" placeholder="name@example.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="contactSubject" class="form-label small fw-semibold text-secondary">Subject <span class="text-danger">*</span></label>
+                                <input type="text" id="contactSubject" class="form-control custom-input" placeholder="Booking query, venue enquiry, etc." required>
+                            </div>
+                            <div class="col-12">
+                                <label for="contactMessage" class="form-label small fw-semibold text-secondary">Message <span class="text-danger">*</span></label>
+                                <textarea id="contactMessage" class="form-control custom-input" rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" id="sendContactBtn" class="btn btn-purple btn-lg w-100 fw-bold">
+                                    Send Message ✉️
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: CONTACT INFORMATION & MAP -->
+            <div class="col-12 col-lg-5">
+                
+                <!-- Info Cards -->
+                <div class="card border-0 shadow-sm rounded-4 p-4 bg-white mb-4">
+                    <h2 class="h5 fw-bold text-dark mb-4">Contact Information</h2>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="bg-purple-subtle text-purple rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                            📍
+                        </div>
+                        <div>
+                            <h3 class="h6 fw-bold text-dark mb-1">Our Headquarters</h3>
+                            <p class="text-secondary small mb-0">123 Comedy Central Way, Downtown, NY 10001</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="bg-purple-subtle text-purple rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                            📧
+                        </div>
+                        <div>
+                            <h3 class="h6 fw-bold text-dark mb-1">Email Support</h3>
+                            <p class="text-secondary small mb-0">support@laughbook.com</p>
+                            <p class="text-secondary small mb-0">partnerships@laughbook.com</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-start gap-3 mb-4">
+                        <div class="bg-purple-subtle text-purple rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                            📞
+                        </div>
+                        <div>
+                            <h3 class="h6 fw-bold text-dark mb-1">Phone Line</h3>
+                            <p class="text-secondary small mb-0">+1 (800) 555-LAUGH</p>
+                            <p class="text-muted extra-small mb-0">Mon - Sat: 9:00 AM - 8:00 PM EST</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Venue Map Image -->
+                <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                    <img src="./Assets/Images/map.png" alt="Venue Location Map" class="img-fluid w-100 object-fit-cover" style="height: 220px;" onerror="this.src='https://via.placeholder.com/600x300?text=Interactive+Venue+Map'">
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-white border-top">
+        <div class="container text-center">
+            <span class="text-muted small">&copy; 2026 LaughBook. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./Assets/JavaScripts/Common.js"></script>
+    <script src="./Assets/JavaScripts/Contact.js"></script>
+</body>
+
+</html>
