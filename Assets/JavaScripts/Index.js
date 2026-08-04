@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                     </div>
                     <div class="d-flex justify-content-between align-items-center pt-2 border-top border-secondary border-opacity-25">
                         <span class="fw-bold price-highlight">$${Number(show.price).toFixed(2)}</span>
-                        <!-- ATTACHED DATA-ID AND BOOK-BTN CLASS HERE -->
                         <button class="btn btn-purple btn-sm px-3 fw-semibold book-btn" data-id="${show.id}">Book Seats</button>
                     </div>
                 </div>
@@ -63,13 +62,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   async function fetchData() {
     try {
       const response = await fetch('./Assets/Json/data.json');
-      if (!response.ok) throw new Error('Network error');
+      if (!response.ok) throw new Error('Network response was not ok');
       showlist = await response.json();
       filterandRenderShows();
     } catch (error) {
       console.error('Error fetching JSON data:', error);
       if (showContainer) {
-        showContainer.innerHTML = `<div class="col-12 text-center text-danger py-5"><h5>Failed to load shows data. Please check data.json path.</h5></div>`;
+        showContainer.innerHTML = `<div class="col-12 text-center text-danger py-5"><h5>Failed to load shows data. Check JSON path.</h5></div>`;
       }
     }
   }
@@ -125,19 +124,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     sortselect.addEventListener('change', filterandRenderShows);
   }
 
-  /* --- 5. BOOK SEATS CLICK LISTENER --- */
+  /* --- 5. BOOK SEATS CLICK DELEGATION --- */
   if (showContainer) {
     showContainer.addEventListener('click', (event) => {
       const bookBtn = event.target.closest('.book-btn');
       if (bookBtn) {
+        event.preventDefault();
         const showId = Number(bookBtn.getAttribute('data-id'));
-        const selectedShow = showlist.find(item => item.id === showId);
+        const selectedShow = showlist.find(item => Number(item.id) === showId);
 
         if (selectedShow) {
-          // Store selected show object in LocalStorage
           localStorage.setItem('selectedShow', JSON.stringify(selectedShow));
-          
-          // Redirect to Book Now page
           window.location.href = './booknow.html';
         }
       }

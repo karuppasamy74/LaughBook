@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedShowStr = localStorage.getItem('selectedShow');
 
     if (!selectedShowStr) {
+        console.warn('No selectedShow found. Redirecting to index...');
         window.location.href = './index.html';
         return;
     }
